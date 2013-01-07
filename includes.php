@@ -12,4 +12,5 @@ $dbhandle = mysql_connect($hostname, $username, $password)
 $selected = mysql_select_db("skadool",$dbhandle) 
   or die("Could not select skadool.");
 
+
 ?>
