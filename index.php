@@ -1,6 +1,6 @@
 <?php
 
-require '/plivo-php/plivo.php';
+require 'plivo.php';
 require_once 'includes.php';
 
 $auth_id = "MAZWU0NZQ2ODLKNJMZMM";
@@ -26,7 +26,7 @@ while($contact = mysql_fetch_assoc($getContact))	{
 	// $response = $dialer->send_message($params);
 	// echo $response . "<br />";
 
-	echo $id . ", " . $number . ", " . $name . ", " . $status;
+	echo $id . ", " . $number . ", " . $name . ", " . $status . "<br />";
 
 }
 
