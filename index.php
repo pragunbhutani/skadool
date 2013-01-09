@@ -1,34 +1,50 @@
 <?php
 
-require 'plivo.php';
 require_once 'includes.php';
 
-$auth_id = "MAZWU0NZQ2ODLKNJMZMM";
-$auth_token = "Y2ZhYmVhNGI1MGU2NzYxMDQ1ZDRjM2U2MWJlM2Ey";
+?>
 
-$dialer = new RestAPI($auth_id, $auth_token);
+<html>
 
-$getContact = mysql_query("SELECT * FROM contacts");
+<?php
 
-while($contact = mysql_fetch_assoc($getContact))	{
-	$id = $contact["id"];
-	$number = $contact["number"];
-	$name = $contact["name"];
-	$status = $contact["status"];
+echo '<h3>List of Visits</h3>';
 
-	$params = array(
-		'src' => '1202XXXXXX',
-		'dst' => $number,
-		'text' => 'Hi ' . $name . ', please send in a response.',
-		'type' => 'sms',
-	);
+$result = mysql_query('SELECT * FROM visits');
 
-	// $response = $dialer->send_message($params);
-	// echo $response . "<br />";
+if(mysql_num_rows($result))	{
+	echo '<table cellpadding="10" cellspacing="10" class="db-table">';
+	echo '<tr><th>Visit ID</th><th>Contact Name</th><th>Contact Number</th><th>Status</th></tr>';
 
-	echo $id . ", " . $number . ", " . $name . ", " . $status . "<br />";
+	while($row = mysql_fetch_row($result))	{
+		echo '<tr>';
+
+		foreach($row as $cell)	{
+			echo '<td>' . $cell . '</td>';
+		}
+
+		echo '</tr>';
+
+	}
+
+	echo '</table><br />';
+
+	?>
+
+	<form name="input" action="sendText.php" method="get">
+		Number of clients to text : <input type="text" name="countTexts" />
+		<input type="submit" value="Submit" />
+	</form>
+
+<?php
 
 }
 
+else 	{
+	echo '<p>No visits in record.</p>';
+}
 
 ?>
+
+
+</html>
