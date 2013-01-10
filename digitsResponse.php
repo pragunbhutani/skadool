@@ -18,15 +18,15 @@
       if ($digits == '1') {
             $response->addSpeak($affirmative, $attributes);
             $updateAfterReply = "UPDATE visits SET status='Scheduled' WHERE contactNumber='" . $from . "'";
+            mysql_query($updateAfterReply, $conn);
       } elseif ($digits == '2') {
             $response->addSpeak($negative, $attributes);
             $updateAfterReply = "UPDATE visits SET status='Unscheduled' WHERE contactNumber='" . $from . "'";
+            mysql_query($updateAfterReply, $conn);
 
       } else {
             $response->addSpeak($wrong_input, $attributes);
       }
-      
-      mysql_query($updateAfterReply, $conn);
 
       header("Content-Type: text/xml");
       echo($response->toXML());
