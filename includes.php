@@ -10,7 +10,7 @@ $port = $mysql_config["port"];
 $db = $mysql_config["name"];
 
 //connection to the database
-$link = mysql_connect("$hostname:$port", $username, $password) 
+$conn = mysql_connect("$hostname:$port", $username, $password) 
 	or die("Unable to connect to MySQL.");
 
 //select a database to work with

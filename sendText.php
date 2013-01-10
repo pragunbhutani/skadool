@@ -31,7 +31,7 @@ for($count=0; $count<$numTexts; $count++)	{
 
 	$updateStatus = "UPDATE visits SET status='Pending Reply' where visitID='" . $visitID . "'";
 
-	mysql_query($updateStatus, $link);
+	mysql_query($updateStatus, $conn);
 
 }
 

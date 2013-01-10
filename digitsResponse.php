@@ -26,7 +26,7 @@
             $response->addSpeak($wrong_input, $attributes);
       }
       
-      mysql_query($updateAfterReply, $link);
+      mysql_query($updateAfterReply, $conn);
 
       header("Content-Type: text/xml");
       echo($response->toXML());
