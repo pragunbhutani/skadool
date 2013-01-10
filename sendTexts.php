@@ -13,7 +13,7 @@ $getContact = mysql_query("SELECT * FROM visits WHERE status = 'Unscheduled'") o
 $numTexts = intval($_GET["countTexts"]);
 
 for($count=0; $count<$numTexts; $count++)	{
-	$contact = mysql_fetch_assoc($getContact)
+	$contact = mysql_fetch_assoc($getContact);
 	$visitID = $contact["visitID"];
 	$number = $contact["contactNumber"];
 	$name = $contact["contactName"];
