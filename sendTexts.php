@@ -27,7 +27,6 @@ for($count=0; $count<$numTexts; $count++)	{
 	);
 
 	$response = $dialer->send_message($params);
-	echo $response . "<br />";
 
 	$updateStatus = "UPDATE visits SET status='Pending Reply' where visitID='" . $visitID . "'";
 
@@ -35,6 +34,6 @@ for($count=0; $count<$numTexts; $count++)	{
 
 }
 
-	echo '<a href="index.php">Return to homepage.</a>'
+	header("location:index.php");
 
 ?>
