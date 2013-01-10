@@ -14,7 +14,7 @@ $conn = mysql_connect("$hostname:$port", $username, $password)
 	or die("Unable to connect to MySQL.");
 
 //select a database to work with
-$selected = mysql_select_db($db, $link) 
+$selected = mysql_select_db($db, $conn) 
   or die("Could not select the database.");
 
 
