@@ -3,8 +3,8 @@
 require 'plivo.php';
 require_once 'includes.php';
 
-$auth_id = "MAZWU0NZQ2ODLKNJMZMM";
-$auth_token = "Y2ZhYmVhNGI1MGU2NzYxMDQ1ZDRjM2U2MWJlM2Ey";
+$auth_id = "MAYTM5N2RLOWU1NDMWMW";
+$auth_token = "MmY4MjIwNTk4ZDA2ODZlNTY2MGJjNDNmZDI5ODlm";
 
 $dialer = new RestAPI($auth_id, $auth_token);
 
@@ -22,7 +22,7 @@ for($count=0; $count<$numTexts; $count++)	{
 	$params = array(
 		'src' => '18453679136',
 		'dst' => $number,
-		'text' => 'Hi ' . $name . ', please send in a response.',
+		'text' => 'Hi ' . $name . ', are you available to receive your delivery today? Reply with Y or N.',
 		'type' => 'sms',
 	);
 
