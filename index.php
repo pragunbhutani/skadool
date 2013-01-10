@@ -31,7 +31,7 @@ if(mysql_num_rows($result))	{
 
 	?>
 
-	<form name="input" action="sendText.php" method="get">
+	<form name="input" action="sendTexts.php" method="get">
 		Number of clients to text : <input type="text" name="countTexts" />
 		<input type="submit" value="Submit" />
 	</form>
