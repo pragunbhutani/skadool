@@ -8,7 +8,7 @@ $auth_token = "MmY4MjIwNTk4ZDA2ODZlNTY2MGJjNDNmZDI5ODlm";
 
 $dialer = new RestAPI($auth_id, $auth_token);
 
-$getContact = mysql_query("SELECT * FROM visits WHERE status = 'Unscheduled'");
+$getContact = mysql_query("SELECT * FROM visits WHERE status = 'Unscheduled'") or die("No entries found. " . mysql_error());
 
 $numTexts = intval($_GET["countTexts"]);
 
