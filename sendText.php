@@ -20,7 +20,7 @@ for($count=0; $count<$numTexts; $count++)	{
 	$status = $contact["status"];
 
 	$params = array(
-		'src' => '1202XXXXXX',
+		'src' => '18453679136',
 		'dst' => $number,
 		'text' => 'Hi ' . $name . ', please send in a response.',
 		'type' => 'sms',
@@ -31,7 +31,7 @@ for($count=0; $count<$numTexts; $count++)	{
 
 	$updateStatus = "UPDATE visits SET status='Pending Reply' where visitID='" . $visitID . "'";
 
-	mysql_query($updateStatus);
+	mysql_query($updateStatus, $link);
 
 }
 

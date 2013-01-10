@@ -12,6 +12,6 @@ if($text=='y' or $text=='Y')
 else
 	$updateAfterReply = "UPDATE visits SET status='Unscheduled' WHERE contactNumber='" . $from . "'";
 
-mysql_query($updateAfterReply);
+mysql_query($updateAfterReply, $Link);
 
 ?>
