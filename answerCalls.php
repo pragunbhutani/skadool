@@ -8,7 +8,7 @@
         'loop' => 2,
     );
     $getdigitattributes = array (
-	'action'=> 'http://' . $_SERVER["SERVER_NAME"] . '/digitsResponse.php',
+	'action'=> 'http://http://skadool.ap01.aws.af.cm/digitsResponse.php/From=' . $_REQUEST['From'],
     );
 
     $r = new Response();

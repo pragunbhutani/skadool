@@ -3,10 +3,10 @@
       require_once 'plivo.php';
       require_once 'includes.php';
 
-      $from = $_REQUEST['From'];
+      $from = $_GET['From'];
            
       $affirmative = 'Thanks, your delivery shall be scheduled today.';
-      $negative = 'Thanks, your delivery shall be scheduled on another day.';
+      $negative = 'Okay, your delivery shall be scheduled on another day.';
       $wrong_input = 'You just entered a wrong input! Have a good day!'
 
       $attributes = array (
