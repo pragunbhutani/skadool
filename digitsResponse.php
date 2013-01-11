@@ -10,7 +10,7 @@
       $wrong_input = 'You just entered a wrong input! Have a good day!'
 
       $attributes = array (
-        'loop' => 2,
+        'loop' => 1,
       );
       $digits = $_REQUEST['Digits'];
       $response = new Response();
