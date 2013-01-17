@@ -22,7 +22,7 @@ for($count=0; $count<$numTexts; $count++)	{
 	$params = array(
 		'src' => '18453679136',
 		'dst' => $number,
-		'text' => 'Hi ' . $name . ', are you available to receive your delivery today? Reply with Y or N.',
+		'text' => 'Hi ' . $name . ', are you available to receive your delivery today? Reply with Y or N. You may also call back to reply.',
 		'type' => 'sms',
 	);
 
