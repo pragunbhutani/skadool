@@ -15,7 +15,7 @@
 
 			mysql_query($query) or die('Error while inserting new row : ' . mysql_error());
 
-			$return = last_insert_id($query);
+			$return = LAST_INSERT_ID($query);
 
 			$results = Array(
 					'body' => Array(
