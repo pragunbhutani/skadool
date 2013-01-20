@@ -15,7 +15,7 @@
 
 			mysql_query($query) or die('Error while inserting new row : ' . mysql_error());
 
-			$return = mysqli_insert_id($query);
+			$return = last_insert_id($query);
 
 			$results = Array(
 					'body' => Array(
@@ -66,6 +66,22 @@
 				);
 
 		break;
+
+		case 'delete' :
+
+			$query = "DELETE from visits WHERE visitID='" . mysql_real_escape_string($_GET['id']) . "'";
+
+			mysql_query($query) or die('Could not delete row : ' . mysql_error());
+
+			$results = Array(
+					'body' => Array(
+						'id' => $_GET['id']
+					)
+				);
+
+		break;
+
+
 
 	}
 
