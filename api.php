@@ -76,8 +76,7 @@
 			$results = Array(
 					'body' => Array(
 						'id' => $_GET['id']
-					)
-				);
+					);
 
 		break;
 
