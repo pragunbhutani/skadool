@@ -7,9 +7,9 @@
 		case 'create' :
 
 			$query = "INSERT INTO `visits` (
-						`visitID`, `contactName`, `contactNumber`, `status`
+						`visitID`, `contactName`, `contactNumber`, `status`, 'updateTime'
 					) VALUES (
-						NULL, '" . mysql_real_escape_string($_GET['name']) . "', '" . mysql_real_escape_string($_GET['number']) . "', 'Unscheduled'
+						NULL, '" . mysql_real_escape_string($_GET['name']) . "', '" . mysql_real_escape_string($_GET['number']) . "', 'Unscheduled', " . time() . "
 					)"
 				;
 
@@ -36,7 +36,7 @@
 
 		case 'update' : 
 
-			$query = "UPDATE visits SET status='" . mysql_real_escape_string($_GET['status']) . "', updatedTime=" . time() . " WHERE contactNumber='" . mysql_real_escape_string($_GET['number']) . "'";
+			$query = "UPDATE visits SET status='" . mysql_real_escape_string($_GET['status']) . "', updateTime=" . time() . " WHERE contactNumber='" . mysql_real_escape_string($_GET['number']) . "'";
 
 			mysql_query($query) or die('Error while updating row : ' . mysql_error());
 

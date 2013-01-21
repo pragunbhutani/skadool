@@ -17,11 +17,11 @@
          
       if ($digits == '1') {
             $response->addSpeak($affirmative, $attributes);
-            $updateAfterReply = "UPDATE visits SET status='Scheduled', updatedTime=" . time() . " WHERE contactNumber='" . $from . "'";
+            $updateAfterReply = "UPDATE visits SET status='Scheduled', updateTime=" . time() . " WHERE contactNumber='" . $from . "'";
             mysql_query($updateAfterReply, $conn);
       } elseif ($digits == '2') {
             $response->addSpeak($negative, $attributes);
-            $updateAfterReply = "UPDATE visits SET status='Unscheduled', updatedTime=" . time() . " WHERE contactNumber='" . $from . "'";
+            $updateAfterReply = "UPDATE visits SET status='Unscheduled', updateTime=" . time() . " WHERE contactNumber='" . $from . "'";
             mysql_query($updateAfterReply, $conn);
 
       } else {
