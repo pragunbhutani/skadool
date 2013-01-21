@@ -155,8 +155,8 @@
 			header ("content-type: text/php charset=utf-8");
 
 			/* Printing the PHP serialized Object*/
-			echo serialize($response);
-			
+			echo serialize($results);
+
 		break;
 
 	}
