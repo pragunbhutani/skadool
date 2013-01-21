@@ -36,7 +36,7 @@
 
 		case 'update' : 
 
-			$query = "UPDATE visits SET status='" . mysql_real_escape_string($_GET['status']) . "' WHERE contactNumber='" . mysql_real_escape_string($_GET['number']) . "'";
+			$query = "UPDATE visits SET status='" . mysql_real_escape_string($_GET['status']) . "', updatedTime=" . time() . " WHERE contactNumber='" . mysql_real_escape_string($_GET['number']) . "'";
 
 			mysql_query($query) or die('Error while updating row : ' . mysql_error());
 
