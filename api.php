@@ -12,6 +12,8 @@
 						NULL, '" . mysql_real_escape_string($_GET['name']) . "', '" . mysql_real_escape_string($_GET['number']) . "', 'Unscheduled', " . time() . "
 					)"
 				;
+				
+			echo $query;
 
 			mysql_query($query) or die('Error while inserting new row : ' . mysql_error());
 
