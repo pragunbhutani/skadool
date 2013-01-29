@@ -7,10 +7,9 @@
 		case 'create' :
 
 			$query = "INSERT INTO `visits` (
-						`visitID`, `contactName`, `contactNumber`, `status`, 'updateTime'
+						`visitID` ,`contactName` ,`contactNumber` ,`status` ,`updateTime`
 					) VALUES (
-						NULL, '" . mysql_real_escape_string($_GET['name']) . "', '" . mysql_real_escape_string($_GET['number']) . "', 'Unscheduled', '" . time() . "'
-					)"
+						NULL, '" . mysql_real_escape_string($_GET['name']) . "', '" . mysql_real_escape_string($_GET['number']) . "', 'Unscheduled', '" . time() . "')"
 				;
 
 			mysql_query($query) or die('Error while inserting new row : ' . mysql_error());
