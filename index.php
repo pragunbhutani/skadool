@@ -89,8 +89,13 @@ require_once 'includes.php';
 					data = JSON.parse(data);
 					for (entry in data.body.updatedData) {
 						var $tr = $("tr[data-visitid=" + data.body.updatedData[entry].visitID + "]");
-						$("td:nth-child(4)", $tr).html(data.body.updatedData[entry].status);
-						$tr.css('background', 'rgb(101, 190, 101)')
+                        if ($tr.length > 0) {
+                            $("td:nth-child(4)", $tr).html(data.body.updatedData[entry].status);
+                        } else {
+                            $tr = $('<tr data-visitid="' + data.body.updatedData[entry].visitID + '"><td>' + data.body.updatedData[entry].visitID + '</td><td>' + data.body.updatedData[entry].contactName + '</td><td>' + data.body.updatedData[entry].contactNumber + '</td><td>' + data.body.updatedData[entry].status + '</td></tr>');
+                            $('table').append($tr);
+                        }
+                        $tr.css('background', 'rgb(101, 190, 101)')
 						window.setTimeout(function($tr) {
 						   $tr.css({background: ''});
 						}, 3000, $tr);
